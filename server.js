@@ -2,9 +2,14 @@ var express = require('express');//load library
 var app = express();//create instance of express
 var port = process.env.port || 1337;
 
+var bodyParser = require('body-parser');
+// create application/x-www-form-urlencoded parser
+app.use(bodyParser.urlencoded({ extended: true }));
+// create application/json parser
+app.use(bodyParser.json());
+
 
 var loginController = require('./dataController/loginController')();//loading userController module
-
 
 app.use("/api/login", loginController);
 

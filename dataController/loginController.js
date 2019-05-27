@@ -9,14 +9,14 @@ var routes = function()
 {
 
     router.route('/')//define route path
-    .get(function(req, res)
+    .post(function(req, res)
     {
 
-       var email = req.query.email;
-       var password = req.query.password;
+       var email = req.body.email;
+       var password = req.body.password;
       
        if (email == null || password == null) {
-          res.status(400).send("Email and password Required");
+          res.send("Email and password Required");
        }
 
        conn.connect().then(function()
