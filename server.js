@@ -3,10 +3,10 @@ var app = express();//create instance of express
 var port = process.env.port || 1337;
 
 
-var userController = require('./dataController/UserController')();//loading userController module
+var loginController = require('./dataController/loginController')();//loading userController module
 
 
-app.use("/api/users", userController);
+app.use("/api/login", loginController);
 
 //simple http server running on specific port number
 app.listen(port, function(){
