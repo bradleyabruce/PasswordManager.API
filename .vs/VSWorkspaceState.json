@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\dataController"
+    "\\dataController",
+    "\\dataEncrypt"
   ],
-  "SelectedNode": "\\dataController\\signUpController.js",
+  "SelectedNode": "\\dataEncrypt",
   "PreviewInSolutionExplorer": false
 }

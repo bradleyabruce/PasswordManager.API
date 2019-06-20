@@ -1,4 +1,6 @@
 var express = require('express');//load library
+var fs = require('fs')
+var https = require('https')
 var app = express();//create instance of express
 var port = process.env.port || 1337;
 
@@ -16,9 +18,10 @@ app.use("/api/login", loginController);
 var signUpController = require('./dataController/signUpController')();
 app.use("/api/signup", signUpController);
 
-
-//start server listening on port number
-app.listen(port, /*'192.168.1.50',*/function(){
+https.createServer({
+    key: fs.readFileSync('./dataEncrypt/server.key'),
+    cert: fs.readFileSync('./dataEncrypt/server.cert')
+}, app).listen(port, /*'192.168.1.50',*/function(){
     var datetime = new Date();
     var message = "Server running on port: " + port + " Started at: " + datetime;
     console.log(message);
