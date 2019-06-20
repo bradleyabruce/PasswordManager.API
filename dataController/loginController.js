@@ -8,8 +8,7 @@ var conn = require("../dataConnect/connect")();
 var routes = function()
 {
 
-    router.route('/')//define route path
-    .post(function(req, res)
+    router.route('/').post(function(req, res)
     {
 
        var email = req.body.email;
@@ -22,35 +21,36 @@ var routes = function()
        conn.connect().then(function()
        {
           
-          var sqlQuery = "SELECT [UserID], [UserLoginEmail], [UserLoginPassword] FROM[PasswordManager].[dbo].[tUsers] WHERE UserLoginEmail = '" + email + "' AND UserLoginPassword = '" + password + "';";//sql query
+          var sqlQuery = "SELECT [UserID], [UserLoginEmail], [UserLoginPassword] FROM[PasswordManager].[dbo].[tUsers] WHERE UserLoginEmail = '" + email + "' AND UserLoginPassword = '" + password + "';";
 
            var req = new sql.Request(conn);
-           req.query(sqlQuery).then(function(recodset)
-           {//call back for getting records
 
-              if (recodset.recordset.length == 0) {
+           req.query(sqlQuery).then(function(recodset)
+           {
+
+               if (recodset.recordset.length == 0)
+               {
                  res.json("No Results");
-              }
-              else {
+               }
+
+               else
+               {
                  res.json(recodset.recordset);//sending response in json format
-              }
+               }
+
                  conn.close();
-                                 
-           })
-            
-                .catch(function(err)
-                {
+                        
+           }).catch(function(err)
+           {
                    conn.close();
                    res.send("Error while getting data");
-                });
+           });
         
-         })
-
-            .catch(function(err)
-            {
+       }).catch(function(err)
+       {
                 conn.close();
-                 res.send("Error while getting data");
-             });
+                res.send("Error while getting data");
+       });
 
        
     });

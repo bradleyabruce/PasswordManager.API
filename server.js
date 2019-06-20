@@ -8,12 +8,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // create application/json parser
 app.use(bodyParser.json());
 
-
-var loginController = require('./dataController/loginController')();//loading userController module
-
+//login module
+var loginController = require('./dataController/loginController')();
 app.use("/api/login", loginController);
 
-//simple http server running on specific port number
+//signup module
+var signUpController = require('./dataController/signUpController')();
+app.use("/api/signup", signUpController);
+
+
+//start server listening on port number
 app.listen(port, function(){
     var datetime = new Date();
     var message = "Server running on port: " + port + " Started at: " + datetime;
@@ -22,11 +26,11 @@ app.listen(port, function(){
 
 /*
 * app is instance of express module
-* .get("/product") is api path in browser for get command
+* .get("/api/Test") is api path in browser for get command
 * (request, reponse) is the call back function which is executed when path is matched
 * response is sent in json format
 */
-app.get("/product", function(request, response){
+app.get("/api/Test", function(request, response){
 
-    response.json({"Message":"Welcome to Node js"});
+    response.sendStatus(200);
 });
