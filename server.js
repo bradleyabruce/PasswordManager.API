@@ -18,7 +18,7 @@ app.use("/api/signup", signUpController);
 
 
 //start server listening on port number
-app.listen(port, function(){
+app.listen(port, /*'192.168.1.50',*/function(){
     var datetime = new Date();
     var message = "Server running on port: " + port + " Started at: " + datetime;
     console.log(message);
