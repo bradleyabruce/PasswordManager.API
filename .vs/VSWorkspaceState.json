@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\dataController",
-    "\\dataEncrypt"
+    "\\dataConnect",
+    "\\dataController"
   ],
-  "SelectedNode": "\\dataEncrypt",
+  "SelectedNode": "\\dataConnect\\connect.js",
   "PreviewInSolutionExplorer": false
 }
