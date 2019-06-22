@@ -7,7 +7,8 @@ var port = process.env.port || 1337;
 //controllers
 var loginController = require('./dataController/loginController')();
 var signUpController = require('./dataController/signUpController')();
-var retrievalController = require('./dataController/retrievalController')();
+var entryRetrievalController = require('./dataController/entryRetrievalController')();
+var categoryRetrievalController = require('./dataController/categoryRetrievalController')();
 
 var bodyParser = require('body-parser');
 // create application/x-www-form-urlencoded parser
@@ -36,8 +37,11 @@ app.use(bodyParser.json());
     //signup module    
     app.use("/api/signup", signUpController);
 
-    //retrieval module    
-    app.use("/api/retrieval", retrievalController);
+    //entry retrieval module    
+    app.use("/api/entryRetrieval", entryRetrievalController);
+
+    //category retrieval module 
+    app.use("/api/categoryRetrieval", categoryRetrievalController);
 
     app.get("/api/Test", function (request, response) {
 
