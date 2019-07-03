@@ -4,7 +4,7 @@ var connect = function () {
 var conn = new sql.ConnectionPool({ 
 user: 'bruceba', 
 password: 'password', 
-server: '74.140.136.128', 
+server: '192.168.1.50', 
 database: 'PasswordManager'
  })
 
