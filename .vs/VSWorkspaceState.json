@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\dataController"
   ],
+  "SelectedNode": "\\dataController\\updateEntryController.js",
   "PreviewInSolutionExplorer": false
 }

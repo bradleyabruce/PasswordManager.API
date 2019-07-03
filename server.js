@@ -9,6 +9,7 @@ var loginController = require('./dataController/loginController')();
 var signUpController = require('./dataController/signUpController')();
 var entryRetrievalController = require('./dataController/entryRetrievalController')();
 var categoryRetrievalController = require('./dataController/categoryRetrievalController')();
+var updateEntryController = require('./dataController/updateEntryController')();
 
 var bodyParser = require('body-parser');
 // create application/x-www-form-urlencoded parser
@@ -42,6 +43,9 @@ app.use(bodyParser.json());
 
     //category retrieval module 
     app.use("/api/categoryRetrieval", categoryRetrievalController);
+
+    //update retrieval module
+    app.use("/api/updateEntry", updateEntryController);
 
     app.get("/api/Test", function (request, response) {
 
