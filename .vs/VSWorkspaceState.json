@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\dataConnect",
     "\\dataController"
   ],
-  "SelectedNode": "\\dataController\\updateEntryController.js",
+  "SelectedNode": "\\dataConnect\\connect.js",
   "PreviewInSolutionExplorer": false
 }

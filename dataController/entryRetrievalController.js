@@ -45,12 +45,12 @@ var routes = function () {
 
             }).catch(function (err) {
                 conn.close();
-                res.send("Error while getting data");
+                res.send("Error: " + err);
             });
 
         }).catch(function (err) {
             conn.close();
-            res.send("Error while getting data");
+            res.send("Error: " + err);
         });
 
 

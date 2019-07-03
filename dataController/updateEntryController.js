@@ -28,29 +28,23 @@ var routes = function () {
                 }
 
                 else {
-                   // res.json(recodset.recordset);//sending response in json format
-                   var array = [recodset.recordset[0]];
-                   //recodset.json(array[0]);
-                   for (i = 0; i < array.length; i++) {
-                    if(i == 2){
-                        res.json(array[i]);
-                    }
-                  } 
+
+                    var IRecordSet = recodset.recordset[0];
+                    res.json(IRecordSet);
+
                 }
 
                 conn.close();
 
             }).catch(function (err) {
                 conn.close();
-                res.send("Error while getting data");
+                res.send("Error: " + err);
             });
 
         }).catch(function (err) {
             conn.close();
-            res.send("Error while getting data");
+            res.send("Error: " + err);
         });
-
-
     });
 
     return router;
