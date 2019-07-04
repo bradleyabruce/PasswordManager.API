@@ -13,8 +13,8 @@ var routes = function () {
         var newPassword = req.body.newPassword;
         var newCategoryID = req.body.newCategoryID;
 
-        if (entryid == null) {
-            res.send("entryid required");
+        if (entryid == null || newUsername == null || newPassword == null || newCategoryID == null) {
+            res.send("entryid, new username, new password, and new categoryid required");
         }
 
         conn.connect().then(function () {
