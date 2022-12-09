@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "inquirer": "^6.4.0",
     "joi": "^14.3.1",
     "mssql": "^5.1.0"
